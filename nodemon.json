@@ -1,0 +1,9 @@
+{
+    "watch": [
+        "src/**/*",
+        "views/**/*"
+    ],
+    "ext": ".ts,.js,.html,.css,.ejs",
+    "ignore": [],
+    "exec": "tsc && npm run copy && node ./build/src/main.js"
+}
