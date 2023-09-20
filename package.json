@@ -7,7 +7,7 @@
     "start:dev": "npm run build && nodemon",
     "start": "npm run build && node ./build/main.js",
     "build": "tsc && npm run copy",
-    "copy": "rm -rf ./build/public && mkdir ./build/public/ && cp -r src/public/ ./build/src/public"
+    "copy": "rm -rf ./build/public && mkdir ./build/public/ && cp -r src/public/ ./build"
   },
   "author": "Valquaint",
   "devDependencies": {

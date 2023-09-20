@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bot Brawler</title>
-</head>
-<body>
-    <h1>Bot Brawler</h1>
+<!-- Header -->
+<%- include('partials/header'); %>
+<!-- End Header -->
     <!-- Navigation -->
     <!-- End Navigation -->
-
+    <%- include('partials/nav'); %>
     <!-- Main Content -->
+    <%
+    for(const bot of bots){
+        %>
+        <div><%=bot.botName%></div>
+        <%
+    }%>
     <!-- End Main Content -->
 
     <!-- Footer -->
+<%- include('partials/footer'); %>
     <!-- End Footer -->
-</body>
-</html>
