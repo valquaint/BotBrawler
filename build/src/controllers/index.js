@@ -10,6 +10,6 @@ const app = (0, express_1.default)();
 app.use("/", router_1.default);
 async function init(PORT, callback) {
     app.listen(PORT, () => console.log(`Server is live at http://localhost:${PORT}`));
-    callback();
+    await callback();
 }
 exports.init = init;

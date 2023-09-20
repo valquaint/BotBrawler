@@ -24,6 +24,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const controller = __importStar(require("./controllers"));
+const mongo = __importStar(require("./classes/mongo"));
 require('dotenv').config();
 const PORT = process.env.PORT;
-controller.init(PORT || 4006, () => { console.log("Initialized Controllers"); });
+(async () => {
+    await controller.init(PORT || 4006, mongo.init.bind(this, process.env.MONGO_URI));
+})().catch(e => {
+    console.log(`Application has encountered a critical error and could not start.`);
+    console.error(e);
+});
