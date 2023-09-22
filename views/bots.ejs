@@ -5,12 +5,12 @@
     <!-- End Navigation -->
     <%- include('partials/nav'); %>
     <!-- Main Content -->
-    <div class="content">
-        <p>
-            Welcome to Bot Brawler!
-        </p>
-        
-    </div>
+    <%
+    for(const bot of bots){
+        %>
+        <div><a href="/bots/<%=bot.botName%>"><%=bot.botName%></a></div>
+        <%
+    }%>
     <!-- End Main Content -->
 
     <!-- Footer -->

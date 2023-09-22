@@ -7,20 +7,19 @@ exports.deleteMany = exports.deleteOne = exports.updateMany = exports.updateOne 
 const mongoose_1 = __importDefault(require("mongoose"));
 const db = mongoose_1.default.connection;
 let bots = null; // TODO : turn into collections array
-const botData = new mongoose_1.default.Schema({
-    "totalMatches": Number,
-    "wins": Number,
-    "losses": Number,
-    "knockouts": Number,
-    "AKT": Number,
-    "nKA": Number,
-    "nKAP": Number,
-    "JDW": Number
-});
 const schema = new mongoose_1.default.Schema({
     "botName": String,
-    "careerData": botData,
-    "seasonalData": [botData]
+    "careerData": {
+        "totalMatches": Number,
+        "wins": Number,
+        "losses": Number,
+        "knockouts": Number,
+        "AKT": Number,
+        "nKA": Number,
+        "nKAP": Number,
+        "JDW": Number
+    },
+    "seasonalData": [{}]
 });
 async function init(URI) {
     await mongoose_1.default.connect(URI)

@@ -16,24 +16,28 @@ const bots = [{
             "JDW": 11 // Judges Decision Wins
         },
         "seasonalData": [{
-                "totalMatches": 5,
-                "wins": 2,
-                "losses": 3,
-                "knockouts": 2,
-                "AKT": 71,
-                "nKA": 3,
-                "nKAP": 60,
-                "JDW": 0 // Judges Decision Wins
+                "WCVII": {
+                    "totalMatches": 5,
+                    "wins": 2,
+                    "losses": 3,
+                    "knockouts": 2,
+                    "AKT": 71,
+                    "nKA": 3,
+                    "nKAP": 60,
+                    "JDW": 0 // Judges Decision Wins
+                }
             },
             {
-                "totalMatches": 7,
-                "wins": 3,
-                "losses": 4,
-                "knockouts": 0,
-                "AKT": 0,
-                "nKA": 2,
-                "nKAP": 29,
-                "JDW": 3 // Judges Decision Wins
+                "2021": {
+                    "totalMatches": 7,
+                    "wins": 3,
+                    "losses": 4,
+                    "knockouts": 0,
+                    "AKT": 0,
+                    "nKA": 2,
+                    "nKAP": 29,
+                    "JDW": 3 // Judges Decision Wins
+                }
             }]
     },
     {
@@ -49,14 +53,16 @@ const bots = [{
             "JDW": 1 // Judges Decision Wins
         },
         "seasonalData": [{
-                "totalMatches": 4,
-                "wins": 1,
-                "losses": 3,
-                "knockouts": 0,
-                "AKT": 0,
-                "nKA": 1,
-                "nKAP": 25,
-                "JDW": 1 // Judges Decision Wins
+                "WCVII": {
+                    "totalMatches": 4,
+                    "wins": 1,
+                    "losses": 3,
+                    "knockouts": 0,
+                    "AKT": 0,
+                    "nKA": 1,
+                    "nKAP": 25,
+                    "JDW": 1 // Judges Decision Wins
+                }
             },
         ]
     },
@@ -73,24 +79,28 @@ const bots = [{
             "JDW": 6 // Judges Decision Wins
         },
         "seasonalData": [{
-                "totalMatches": 5,
-                "wins": 3,
-                "losses": 2,
-                "knockouts": 0,
-                "AKT": 0,
-                "nKA": 2,
-                "nKAP": 40,
-                "JDW": 3 // Judges Decision Wins
+                "WCVII": {
+                    "totalMatches": 5,
+                    "wins": 3,
+                    "losses": 2,
+                    "knockouts": 0,
+                    "AKT": 0,
+                    "nKA": 2,
+                    "nKAP": 40,
+                    "JDW": 3 // Judges Decision Wins
+                }
             },
             {
-                "totalMatches": 5,
-                "wins": 3,
-                "losses": 2,
-                "knockouts": 2,
-                "AKT": 131,
-                "nKA": 2,
-                "nKAP": 40,
-                "JDW": 1 // Judges Decision Wins
+                "2020": {
+                    "totalMatches": 5,
+                    "wins": 3,
+                    "losses": 2,
+                    "knockouts": 2,
+                    "AKT": 131,
+                    "nKA": 2,
+                    "nKAP": 40,
+                    "JDW": 1 // Judges Decision Wins
+                }
             }]
     },
     {
@@ -106,24 +116,28 @@ const bots = [{
             "JDW": 1 // Judges Decision Wins
         },
         "seasonalData": [{
-                "totalMatches": 5,
-                "wins": 1,
-                "losses": 3,
-                "knockouts": 1,
-                "AKT": 129,
-                "nKA": 3,
-                "nKAP": 50,
-                "JDW": 0 // Judges Decision Wins
+                "WCVII": {
+                    "totalMatches": 5,
+                    "wins": 1,
+                    "losses": 3,
+                    "knockouts": 1,
+                    "AKT": 129,
+                    "nKA": 3,
+                    "nKAP": 50,
+                    "JDW": 0 // Judges Decision Wins
+                }
             },
             {
-                "totalMatches": 3,
-                "wins": 0,
-                "losses": 3,
-                "knockouts": 0,
-                "AKT": 0,
-                "nKA": 2,
-                "nKAP": 67,
-                "JDW": 0 // Judges Decision Wins
+                "2021": {
+                    "totalMatches": 3,
+                    "wins": 0,
+                    "losses": 3,
+                    "knockouts": 0,
+                    "AKT": 0,
+                    "nKA": 2,
+                    "nKAP": 67,
+                    "JDW": 0 // Judges Decision Wins
+                }
             }]
     },
     {
@@ -139,24 +153,28 @@ const bots = [{
             "JDW": 9 // Judges Decision Wins
         },
         "seasonalData": [{
-                "totalMatches": 6,
-                "wins": 3,
-                "losses": 3,
-                "knockouts": 3,
-                "AKT": 124,
-                "nKA": 2,
-                "nKAP": 33,
-                "JDW": 0 // Judges Decision Wins
+                "WCVII": {
+                    "totalMatches": 6,
+                    "wins": 3,
+                    "losses": 3,
+                    "knockouts": 3,
+                    "AKT": 124,
+                    "nKA": 2,
+                    "nKAP": 33,
+                    "JDW": 0 // Judges Decision Wins
+                }
             },
             {
-                "totalMatches": 8,
-                "wins": 5,
-                "losses": 3,
-                "knockouts": 3,
-                "AKT": 81,
-                "nKA": 0,
-                "nKAP": 0,
-                "JDW": 4 // Judges Decision Wins
+                "2021": {
+                    "totalMatches": 8,
+                    "wins": 5,
+                    "losses": 3,
+                    "knockouts": 3,
+                    "AKT": 81,
+                    "nKA": 0,
+                    "nKAP": 0,
+                    "JDW": 4 // Judges Decision Wins
+                }
             }]
     },
     {
@@ -172,24 +190,28 @@ const bots = [{
             "JDW": 3 // Judges Decision Wins
         },
         "seasonalData": [{
-                "totalMatches": 5,
-                "wins": 2,
-                "losses": 3,
-                "knockouts": 0,
-                "AKT": 0,
-                "nKA": 0,
-                "nKAP": 0,
-                "JDW": 2 // Judges Decision Wins
+                "WCVII": {
+                    "totalMatches": 5,
+                    "wins": 2,
+                    "losses": 3,
+                    "knockouts": 0,
+                    "AKT": 0,
+                    "nKA": 0,
+                    "nKAP": 0,
+                    "JDW": 2 // Judges Decision Wins
+                }
             },
             {
-                "totalMatches": 7,
-                "wins": 6,
-                "losses": 1,
-                "knockouts": 5,
-                "AKT": 107,
-                "nKA": 1,
-                "nKAP": 14,
-                "JDW": 1 // Judges Decision Wins
+                "2021": {
+                    "totalMatches": 7,
+                    "wins": 6,
+                    "losses": 1,
+                    "knockouts": 5,
+                    "AKT": 107,
+                    "nKA": 1,
+                    "nKAP": 14,
+                    "JDW": 1 // Judges Decision Wins
+                }
             }]
     },
     {
@@ -205,24 +227,28 @@ const bots = [{
             "JDW": 5 // Judges Decision Wins
         },
         "seasonalData": [{
-                "totalMatches": 5,
-                "wins": 2,
-                "losses": 3,
-                "knockouts": 2,
-                "AKT": 115,
-                "nKA": 2,
-                "nKAP": 40,
-                "JDW": 0 // Judges Decision Wins
+                "WCVII": {
+                    "totalMatches": 5,
+                    "wins": 2,
+                    "losses": 3,
+                    "knockouts": 2,
+                    "AKT": 115,
+                    "nKA": 2,
+                    "nKAP": 40,
+                    "JDW": 0 // Judges Decision Wins
+                }
             },
             {
-                "totalMatches": 9,
-                "wins": 5,
-                "losses": 4,
-                "knockouts": 3,
-                "AKT": 73,
-                "nKA": 1,
-                "nKAP": 11,
-                "JDW": 2 // Judges Decision Wins
+                "2021": {
+                    "totalMatches": 9,
+                    "wins": 5,
+                    "losses": 4,
+                    "knockouts": 3,
+                    "AKT": 73,
+                    "nKA": 1,
+                    "nKAP": 11,
+                    "JDW": 2 // Judges Decision Wins
+                }
             }]
     },
     {
@@ -238,24 +264,28 @@ const bots = [{
             "JDW": 0 // Judges Decision Wins
         },
         "seasonalData": [{
-                "totalMatches": 4,
-                "wins": 1,
-                "losses": 3,
-                "knockouts": 1,
-                "AKT": 142,
-                "nKA": 2,
-                "nKAP": 50,
-                "JDW": 0 // Judges Decision Wins
+                "WCVII": {
+                    "totalMatches": 4,
+                    "wins": 1,
+                    "losses": 3,
+                    "knockouts": 1,
+                    "AKT": 142,
+                    "nKA": 2,
+                    "nKAP": 50,
+                    "JDW": 0 // Judges Decision Wins
+                }
             },
             {
-                "totalMatches": 6,
-                "wins": 2,
-                "losses": 4,
-                "knockouts": 2,
-                "AKT": 129,
-                "nKA": 3,
-                "nKAP": 50,
-                "JDW": 0 // Judges Decision Wins
+                "2021": {
+                    "totalMatches": 6,
+                    "wins": 2,
+                    "losses": 4,
+                    "knockouts": 2,
+                    "AKT": 129,
+                    "nKA": 3,
+                    "nKAP": 50,
+                    "JDW": 0 // Judges Decision Wins
+                }
             }]
     },
     {
@@ -271,24 +301,28 @@ const bots = [{
             "JDW": 3 // Judges Decision Wins
         },
         "seasonalData": [{
-                "totalMatches": 5,
-                "wins": 3,
-                "losses": 2,
-                "knockouts": 1,
-                "AKT": 166,
-                "nKA": 1,
-                "nKAP": 20,
-                "JDW": 2 // Judges Decision Wins
+                "WCVII": {
+                    "totalMatches": 5,
+                    "wins": 3,
+                    "losses": 2,
+                    "knockouts": 1,
+                    "AKT": 166,
+                    "nKA": 1,
+                    "nKAP": 20,
+                    "JDW": 2 // Judges Decision Wins
+                }
             },
             {
-                "totalMatches": 5,
-                "wins": 3,
-                "losses": 2,
-                "knockouts": 1,
-                "AKT": 104,
-                "nKA": 2,
-                "nKAP": 40,
-                "JDW": 1 // Judges Decision Wins
+                "2021": {
+                    "totalMatches": 5,
+                    "wins": 3,
+                    "losses": 2,
+                    "knockouts": 1,
+                    "AKT": 104,
+                    "nKA": 2,
+                    "nKAP": 40,
+                    "JDW": 1 // Judges Decision Wins
+                }
             }]
     },
     {
@@ -304,24 +338,28 @@ const bots = [{
             "JDW": 0 // Judges Decision Wins
         },
         "seasonalData": [{
-                "totalMatches": 5,
-                "wins": 3,
-                "losses": 2,
-                "knockouts": 3,
-                "AKT": 91,
-                "nKA": 2,
-                "nKAP": 40,
-                "JDW": 0 // Judges Decision Wins
+                "WCVII": {
+                    "totalMatches": 5,
+                    "wins": 3,
+                    "losses": 2,
+                    "knockouts": 3,
+                    "AKT": 91,
+                    "nKA": 2,
+                    "nKAP": 40,
+                    "JDW": 0 // Judges Decision Wins
+                }
             },
             {
-                "totalMatches": 7,
-                "wins": 5,
-                "losses": 2,
-                "knockouts": 4,
-                "AKT": 85,
-                "nKA": 2,
-                "nKAP": 29,
-                "JDW": 0 // Judges Decision Wins
+                "2021": {
+                    "totalMatches": 7,
+                    "wins": 5,
+                    "losses": 2,
+                    "knockouts": 4,
+                    "AKT": 85,
+                    "nKA": 2,
+                    "nKAP": 29,
+                    "JDW": 0 // Judges Decision Wins
+                }
             }]
     },
     {
@@ -337,24 +375,28 @@ const bots = [{
             "JDW": 8 // Judges Decision Wins
         },
         "seasonalData": [{
-                "totalMatches": 8,
-                "wins": 6,
-                "losses": 2,
-                "knockouts": 2,
-                "AKT": 61,
-                "nKA": 2,
-                "nKAP": 25,
-                "JDW": 4 // Judges Decision Wins
+                "WCVII": {
+                    "totalMatches": 8,
+                    "wins": 6,
+                    "losses": 2,
+                    "knockouts": 2,
+                    "AKT": 61,
+                    "nKA": 2,
+                    "nKAP": 25,
+                    "JDW": 4 // Judges Decision Wins
+                }
             },
             {
-                "totalMatches": 4,
-                "wins": 3,
-                "losses": 1,
-                "knockouts": 1,
-                "AKT": 105,
-                "nKA": 1,
-                "nKAP": 25,
-                "JDW": 2 // Judges Decision Wins
+                "2021": {
+                    "totalMatches": 4,
+                    "wins": 3,
+                    "losses": 1,
+                    "knockouts": 1,
+                    "AKT": 105,
+                    "nKA": 1,
+                    "nKAP": 25,
+                    "JDW": 2 // Judges Decision Wins
+                }
             }]
     },
     {
@@ -370,24 +412,28 @@ const bots = [{
             "JDW": 1 // Judges Decision Wins
         },
         "seasonalData": [{
-                "totalMatches": 5,
-                "wins": 2,
-                "losses": 3,
-                "knockouts": 2,
-                "AKT": 76,
-                "nKA": 2,
-                "nKAP": 40,
-                "JDW": 0 // Judges Decision Wins
+                "WCVII": {
+                    "totalMatches": 5,
+                    "wins": 2,
+                    "losses": 3,
+                    "knockouts": 2,
+                    "AKT": 76,
+                    "nKA": 2,
+                    "nKAP": 40,
+                    "JDW": 0 // Judges Decision Wins
+                }
             },
             {
-                "totalMatches": 7,
-                "wins": 6,
-                "losses": 1,
-                "knockouts": 5,
-                "AKT": 87,
-                "nKA": 0,
-                "nKAP": 0,
-                "JDW": 1 // Judges Decision Wins
+                "2019": {
+                    "totalMatches": 7,
+                    "wins": 6,
+                    "losses": 1,
+                    "knockouts": 5,
+                    "AKT": 87,
+                    "nKA": 0,
+                    "nKAP": 0,
+                    "JDW": 1 // Judges Decision Wins
+                }
             }]
     }
 ];

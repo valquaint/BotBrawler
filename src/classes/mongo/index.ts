@@ -1,20 +1,32 @@
 import mongoose, { connection } from 'mongoose';
 const db = mongoose.connection;
 let bots:mongoose.Model<any>|null = null; // TODO : turn into collections array
-const botData = new mongoose.Schema({
-    "totalMatches" : Number,
-    "wins" : Number,
-    "losses" : Number,
-    "knockouts" : Number,
-    "AKT" : Number,
-    "nKA" : Number,
-    "nKAP" : Number,
-    "JDW" : Number
-})
+interface Season {
+    [key: string]: {
+        "Name"?: String,
+        "totalMatches"?: Number,
+        "wins"?: Number,
+        "losses"?: Number,
+        "knockouts"?: Number,
+        "AKT"?: Number,
+        "nKA"?: Number,
+        "nKAP"?: Number,
+        "JDW"?: Number
+    }
+}
 const schema = new mongoose.Schema({
     "botName" : String,
-    "careerData":botData,
-    "seasonalData":[botData]
+    "careerData":{
+        "totalMatches" : Number,
+        "wins" : Number,
+        "losses" : Number,
+        "knockouts" : Number,
+        "AKT" : Number,
+        "nKA" : Number,
+        "nKAP" : Number,
+        "JDW" : Number
+    },
+    "seasonalData":[{} as Season]
 })
 export async function init(URI:string){
     await mongoose.connect(URI)
