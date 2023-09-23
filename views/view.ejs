@@ -18,7 +18,7 @@
                         <ul>
                             <li>Fight</li>
                             <li><a href="/bots/<%=bot.botName%>/edit">Edit</a></li>
-                            <li>Delete</li>
+                            <li><form action="/bots/<%=bot.botName%>?_method=delete" method="post"><a onclick="this.parentNode.submit();" href="#">Delete</a></form></li>
                         </ul>
                     </div>
                 </div>

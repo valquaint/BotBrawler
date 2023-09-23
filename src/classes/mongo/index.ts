@@ -16,6 +16,7 @@ interface Season {
 }
 const schema = new mongoose.Schema({
     "botName" : String,
+    "img" : String,
     "careerData":{
         "totalMatches" : Number,
         "wins" : Number,

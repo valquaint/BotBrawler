@@ -9,6 +9,7 @@ const db = mongoose_1.default.connection;
 let bots = null; // TODO : turn into collections array
 const schema = new mongoose_1.default.Schema({
     "botName": String,
+    "img": String,
     "careerData": {
         "totalMatches": Number,
         "wins": Number,

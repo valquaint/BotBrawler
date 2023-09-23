@@ -5,6 +5,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const bots = [{
         "botName": "Skorpios",
+        "img": "https://battlebots.com/wp-content/uploads/2021/10/Skorpios-bot-2021.jpg",
         "careerData": {
             "totalMatches": 31,
             "wins": 18,

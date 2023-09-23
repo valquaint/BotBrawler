@@ -64,9 +64,11 @@ router.get("/bots/new", (req, res) => {
 });
 router.post("/bots/new", async (req, res) => {
     const botName = req.body.name;
+    const botImg = req.body.img;
+    delete req.body.img;
     delete req.body.name;
     const careerData = req.body;
-    const result = (await mongo.insert("bots", { botName: botName, careerData: careerData, seasonalData: [] }));
+    const result = (await mongo.insert("bots", { botName: botName, img: botImg, careerData: careerData, seasonalData: [] }));
     console.log(result);
     res.redirect(`/bots/${botName}`);
 });
@@ -88,11 +90,19 @@ router.post("/bots/:search/edit/addseason", async (req, res) => {
     console.log(update);
     res.redirect(`/bots/${req.params.search}`);
 });
-router.get("/bots/fight", (req, res) => {
+router.get("/fight", (req, res) => {
+    res.send("Coming Soon... Please return to the <a href='/'>Home Page</a>");
 });
-router.post("/bots/fight", (req, res) => {
+router.post("/fight", (req, res) => {
+    res.send("Coming Soon... Please return to the <a href='/'>Home Page</a>");
 });
-router.get("/bots/simulate", (req, res) => {
+router.get("/simulate", (req, res) => {
+    res.send("Coming Soon... Please return to the <a href='/'>Home Page</a>");
+});
+router.delete("/bots/:search", async (req, res) => {
+    let find = (await mongo.deleteOne({ botName: req.params.search }));
+    console.log(find);
+    res.redirect("/bots");
 });
 router.get("/bots/:search", async (req, res) => {
     let find = (await mongo.findOne({ botName: req.params.search }, { _id: 0 }));
@@ -148,5 +158,8 @@ router.get("/seed/:file", async (req, res) => {
         }
     }
     res.sendStatus(404);
+});
+router.get("/about", (req, res) => {
+    res.send("About page coming soon. Please return to the <a href='/'>Home Page</a>");
 });
 exports.default = router;
