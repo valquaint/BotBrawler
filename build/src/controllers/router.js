@@ -70,7 +70,23 @@ router.post("/bots/new", async (req, res) => {
     console.log(result);
     res.redirect(`/bots/${botName}`);
 });
-router.get("/bots/new/season", (req, res) => {
+router.post("/bots/:search/edit/addseason", async (req, res) => {
+    const season = req.body.season;
+    delete req.body.season;
+    // console.log({ $set: {[season] : req.body} });
+    const values = {};
+    for (const value in req.body) {
+        req.body[value] = parseInt(req.body[value]) || req.body[value];
+    }
+    console.log("VALUES");
+    console.log({ $set: { [season]: req.body } });
+    console.log("==");
+    let oldBot = (await mongo.findOne({ botName: req.params.search }, { _id: 0 }));
+    oldBot.seasonalData.push({ [season]: req.body });
+    console.log(oldBot);
+    let update = (await mongo.updateOne({ botName: req.params.search }, { $set: { seasonalData: oldBot.seasonalData } }))._doc;
+    console.log(update);
+    res.redirect(`/bots/${req.params.search}`);
 });
 router.get("/bots/fight", (req, res) => {
 });

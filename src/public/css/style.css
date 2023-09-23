@@ -6,13 +6,14 @@ body {
     color: #20f;
 }
 
-nav ul {
+ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;
+    padding-inline-start: 0;
 }
 
-nav ul li {
+ul li {
     padding: 4px;
 }
 
