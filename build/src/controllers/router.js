@@ -22,35 +22,124 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const mongo = __importStar(require("../classes/mongo"));
+const method_override_1 = __importDefault(require("method-override"));
+function strip_id(obj) {
+    let result = obj;
+    console.log("Stripping ID from object");
+    for (const prop in result) {
+        if (prop === "_id") {
+            console.log("ID found. Deleting.");
+            delete result[prop];
+        }
+        else {
+            console.log(`typeof ${prop} is ${typeof result[prop]}`);
+            if (typeof result[prop] === "object") {
+                console.log(` === Recursively searching: ${result[prop]} === `);
+                result[prop] = strip_id(result[prop]);
+            }
+        }
+    }
+    return result;
+}
 const router = (0, express_1.Router)();
 router.use("/css/", (0, express_1.static)("./build/public/css"));
-router.get("/", async (req, res) => {
+router.use((0, method_override_1.default)("_method"));
+router.use((0, express_1.urlencoded)({ extended: true }));
+router.get("/", (req, res) => {
+    res.render("index.ejs");
+});
+router.get("/bots", async (req, res) => {
     const bots = await mongo.find(null, { _id: 0 });
     console.log(bots);
-    res.render("index.ejs", { bots: bots });
+    res.render("bots.ejs", { bots: bots });
 });
-router.get("/bot/", (req, res) => {
+router.get("/bots/new", (req, res) => {
+    res.render("new.ejs");
 });
-router.get("/bot/:name", (req, res) => {
+router.post("/bots/new", async (req, res) => {
+    const botName = req.body.name;
+    const botImg = req.body.img;
+    delete req.body.img;
+    delete req.body.name;
+    const careerData = req.body;
+    const result = (await mongo.insert("bots", { botName: botName, img: botImg, careerData: careerData, seasonalData: [] }));
+    console.log(result);
+    res.redirect(`/bots/${botName}`);
 });
-router.get("/bot/:id/edit", (req, res) => {
+router.post("/bots/:search/edit/addseason", async (req, res) => {
+    const season = req.body.season;
+    delete req.body.season;
+    // console.log({ $set: {[season] : req.body} });
+    const values = {};
+    for (const value in req.body) {
+        req.body[value] = parseInt(req.body[value]) || req.body[value];
+    }
+    console.log("VALUES");
+    console.log({ $set: { [season]: req.body } });
+    console.log("==");
+    let oldBot = (await mongo.findOne({ botName: req.params.search }, { _id: 0 }));
+    oldBot.seasonalData.push({ [season]: req.body });
+    console.log(oldBot);
+    let update = (await mongo.updateOne({ botName: req.params.search }, { $set: { seasonalData: oldBot.seasonalData } }))._doc;
+    console.log(update);
+    res.redirect(`/bots/${req.params.search}`);
 });
-router.get("/bot/new", (req, res) => {
+router.get("/fight", (req, res) => {
+    res.send("Coming Soon... Please return to the <a href='/'>Home Page</a>");
 });
-router.get("/bot/fight", (req, res) => {
+router.post("/fight", (req, res) => {
+    res.send("Coming Soon... Please return to the <a href='/'>Home Page</a>");
 });
-router.get("/bot/simulate", (req, res) => {
+router.get("/simulate", (req, res) => {
+    res.send("Coming Soon... Please return to the <a href='/'>Home Page</a>");
 });
-router.post("/bot/", (req, res) => {
+router.delete("/bots/:search", async (req, res) => {
+    let find = (await mongo.deleteOne({ botName: req.params.search }));
+    console.log(find);
+    res.redirect("/bots");
 });
-router.post("/bot/fight", (req, res) => {
+router.get("/bots/:search", async (req, res) => {
+    let find = (await mongo.findOne({ botName: req.params.search }, { _id: 0 }));
+    res.render("view.ejs", { bot: find._doc });
 });
-router.delete("/bot/:id", (req, res) => {
+router.get("/bots/:search/edit", async (req, res) => {
+    let find = (await mongo.findOne({ botName: req.params.search }, { _id: 0 }));
+    res.render("edit.ejs", { bot: find, index: req.params.search });
 });
-router.put("/bot/:id", (req, res) => {
+router.put("/bots/:search/update", async (req, res) => {
+    const season = req.body.season;
+    delete req.body.season;
+    console.log({ $set: { [season]: req.body } });
+    const values = {};
+    for (const value in req.body) {
+        req.body[value] = parseInt(req.body[value]) || req.body[value];
+    }
+    console.log("VALUES");
+    console.log({ $set: { [season]: values } });
+    console.log("==");
+    let oldBot = (await mongo.findOne({ botName: req.params.search }, { _id: 0 }));
+    oldBot.seasonalData.find((oldSeason, index) => {
+        console.log("Find:");
+        if (`${Object.keys(oldSeason)}` === season) {
+            oldBot.seasonalData[index] = { [season]: req.body };
+            console.log(`Found at ${index}`);
+        }
+    });
+    let update = (await mongo.updateOne({ botName: req.params.search }, { $set: { seasonalData: oldBot.seasonalData } }))._doc;
+    console.log(update);
+    res.redirect(`/bots/${req.params.search}`);
+});
+router.get("/bots/:search/data", async (req, res) => {
+    let find = (await mongo.findOne({ botName: req.params.search }, { _id: 0 }))._doc;
+    const result = strip_id(find);
+    console.log(result);
+    res.send(result);
 });
 router.get("/seed/:file", async (req, res) => {
     if (req.rawHeaders[1].indexOf("localhost") !== -1) {
@@ -69,5 +158,8 @@ router.get("/seed/:file", async (req, res) => {
         }
     }
     res.sendStatus(404);
+});
+router.get("/about", (req, res) => {
+    res.send("About page coming soon. Please return to the <a href='/'>Home Page</a>");
 });
 exports.default = router;

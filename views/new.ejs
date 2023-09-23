@@ -1,0 +1,34 @@
+<!-- Header -->
+<%- include('partials/header'); %>
+    <!-- End Header -->
+    <!-- Navigation -->
+    <!-- End Navigation -->
+    <%- include('partials/nav'); %>
+        <!-- Main Content -->
+        <div>
+            <h2>
+                New Bot
+            </h2>
+
+            <form action="/bots/new" method="post">
+                <div class="editField"><label for="name">Bot Name: </label><input name="name" placeholder="Bot Name"></div>
+                <section>
+                    <h3>Career Stats</h3>
+                    <div class="editField"><label for="totalMatches">totalMatches</label><input id="totalMatches" name="totalMatches" placeholder="Total Matches" /></div>
+                    <div class="editField"><label for="wins">wins</label><input id="wins" name="wins" placeholder="Wins" /></div>
+                    <div class="editField"><label for="losses">losses</label><input id="losses" name="losses" placeholder="Losses" /></div>
+                    <div class="editField"><label for="knockouts">knockouts</label><input id="knockouts" name="knockouts" placeholder="Knockouts" /></div>
+                    <div class="editField"><label for="AKT">AKT</label><input id="AKT" name="AKT" placeholder="Average Knockout Time" /></div>
+                    <div class="editField"><label for="nKA">nKA</label><input id="nKA" name="nKA" placeholder="Knockouts Against" /></div>
+                    <div class="editField"><label for="nKAP">nKAP</label><input id="nKAP" name="nKAP" placeholder="Knockout Against Percentage" /></div>
+                    <div class="editField"><label for="JDW">JDW</label><input id="JDW" name="JDW" placeholder="Judges Decision Wins" /></div>
+                    <div class="editField"><label for="img">Image</label><input id="img" name="img" placeholder="Image [optional]" /></div>
+                </section>
+                <input type="submit" value="Add Bot">
+            </form>
+        </div>
+        <!-- End Main Content -->
+
+        <!-- Footer -->
+        <%- include('partials/footer'); %>
+            <!-- End Footer -->

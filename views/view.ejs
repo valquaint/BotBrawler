@@ -1,0 +1,107 @@
+<!-- Header -->
+<%- include('partials/header'); %>
+    <!-- End Header -->
+    <!-- Navigation -->
+    <!-- End Navigation -->
+    <%- include('partials/nav'); %>
+        <!-- Main Content -->
+        <div>
+            <h2>
+                <%=bot.botName%>
+            </h2>
+            <div class="content">
+                <div class="sidebar">
+                    <div class="botImage">
+                        <img src="<%=bot.img || ''%>">
+                    </div>
+                    <div class="botActions">
+                        <ul>
+                            <li>Fight</li>
+                            <li><a href="/bots/<%=bot.botName%>/edit">Edit</a></li>
+                            <li><form action="/bots/<%=bot.botName%>?_method=delete" method="post"><a onclick="this.parentNode.submit();" href="#">Delete</a></form></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="career">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <td>Matches</td>
+                                <td>Wins</td>
+                                <td>Losses</td>
+                                <td>Knockouts</td>
+                                <td>Avg K.O. Time</td>
+                                <td>K.O. Losses</td>
+                                <td>K.O. Loss %</td>
+                                <td>Judges Wins</td>
+                            </tr>
+                        </thead>
+                        <tr class="total">
+                            <td class="header">Career Total:</td>
+                            <td>
+                                <%=bot.careerData.totalMatches%>
+                            </td>
+                            <td>
+                                <%=bot.careerData.wins%>
+                            </td>
+                            <td>
+                                <%=bot.careerData.losses%>
+                            </td>
+                            <td>
+                                <%=bot.careerData.knockouts%>
+                            </td>
+                            <td>
+                                <%=bot.careerData.AKT%>
+                            </td>
+                            <td>
+                                <%=bot.careerData.nKA%>
+                            </td>
+                            <td>
+                                <%=bot.careerData.nKAP%>
+                            </td>
+                            <td>
+                                <%=bot.careerData.JDW%>
+                            </td>
+                        </tr>
+                        <% for(const season of bot.seasonalData) { console.log(season[Object.keys(season)]); %>
+                            <tr class="season">
+                                <td class="header">
+                                    <%= Object.keys(season)%>
+                                </td>
+                                <td>
+                                    <%=season[Object.keys(season)].totalMatches%>
+                                </td>
+                                <td>
+                                    <%=season[Object.keys(season)].wins%>
+                                </td>
+                                <td>
+                                    <%=season[Object.keys(season)].losses%>
+                                </td>
+                                <td>
+                                    <%=season[Object.keys(season)].knockouts%>
+                                </td>
+                                <td>
+                                    <%=season[Object.keys(season)].AKT%>
+                                </td>
+                                <td>
+                                    <%=season[Object.keys(season)].nKA%>
+                                </td>
+                                <td>
+                                    <%=season[Object.keys(season)].nKAP%>
+                                </td>
+                                <td>
+                                    <%=season[Object.keys(season)].JDW%>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <!-- End Main Content -->
+
+        <!-- Footer -->
+        <%- include('partials/footer'); %>
+            <!-- End Footer -->

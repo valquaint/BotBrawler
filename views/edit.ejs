@@ -1,0 +1,72 @@
+<!-- Header -->
+<%- include('partials/header'); %>
+    <!-- End Header -->
+    <!-- Navigation -->
+    <!-- End Navigation -->
+    <%- include('partials/nav'); %>
+        <!-- Main Content -->
+        <div>
+            <h2>
+                Edit: <%=bot.botName%>
+            </h2>
+
+            <form action="/bots/<%=index%>/update?_method=PUT">
+                <section>
+                    <h3>Career Stats</h3>
+                <% for(const prop in bot.careerData) {
+                    
+                    if(typeof bot.careerData[prop] !== "object" && typeof bot.careerData[prop] !== "boolean" && typeof bot.careerData[prop] !== "function" && prop !== "$basePath") {
+                        %> <!-- typeOf <%= prop %> is <%= typeof bot.careerData[prop]%> and value is <%= bot.careerData[prop] %> -->
+                            <div class="editField"><label for="<%=prop%>"><%=prop%></label><input id="<%=prop%>" name="<%=prop%>" value="<%=bot.careerData[prop] || ''%>" /></div>
+                        <%
+                    }
+                }
+                %>
+            </section>
+                <input type="submit" value="Update Career Stats">
+            </form>
+            <div id="seasons">
+            <% for(const season of bot.seasonalData) {
+                %> 
+                <section>
+                    <form action="/bots/<%=index%>/update?_method=PUT" method="post">
+                        <input type="hidden" name="season" value="<%=Object.keys(season)%>">
+                    
+                    <h4>Season: <%=Object.keys(season)%></h4>
+                <%
+                for (const prop in season[Object.keys(season)]) {   
+                    if(typeof season[prop] !== "object" && typeof season[prop] !== "boolean" && typeof season[prop] !== "function" && prop !== "$basePath" && prop !== "id" && prop !== "__index") {
+                        %> <!-- typeOf <%= prop %> is <%= typeof season[prop]%> and value is <%= season[prop] %> -->
+                            <div class="editField"><label for="<%=prop%>"><%=prop%></label><input id="<%=prop%>" name="<%=prop%>" value="<%=season[Object.keys(season)][prop] || ''%>" /></div>
+                        <%
+                    }
+                }
+                %>
+                <input type="submit" value="Update Season <%=Object.keys(season)%>">
+                </form>
+                </section>
+                <%
+            }
+            %>
+            <section id="addSeason">
+                <form action="/bots/<%=bot.botName%>/edit/addSeason" method="post">
+                <h3>New Season Stats</h3>
+                <div class="editField"><label for="season">Season</label><input id="season" name="season" placeholder="Season Name" /></div>
+                <div class="editField"><label for="totalMatches">totalMatches</label><input id="totalMatches" name="totalMatches" placeholder="Total Matches" /></div>
+                <div class="editField"><label for="wins">wins</label><input id="wins" name="wins" placeholder="Wins" /></div>
+                <div class="editField"><label for="losses">losses</label><input id="losses" name="losses" placeholder="Losses" /></div>
+                <div class="editField"><label for="knockouts">knockouts</label><input id="knockouts" name="knockouts" placeholder="Knockouts" /></div>
+                <div class="editField"><label for="AKT">AKT</label><input id="AKT" name="AKT" placeholder="Average Knockout Time" /></div>
+                <div class="editField"><label for="nKA">nKA</label><input id="nKA" name="nKA" placeholder="Knockouts Against" /></div>
+                <div class="editField"><label for="nKAP">nKAP</label><input id="nKAP" name="nKAP" placeholder="Knockout Against Percentage" /></div>
+                <div class="editField"><label for="JDW">JDW</label><input id="JDW" name="JDW" placeholder="Judges Decision Wins" /></div>
+            </section>
+            <input type="submit" value="Add Season">
+        </form>
+            </div>
+        </div>
+        <!-- End Main Content -->
+
+        <!-- Footer -->
+        <%- include('partials/footer'); %>
+            <!-- End Footer -->

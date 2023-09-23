@@ -1,0 +1,20 @@
+<!-- Header -->
+<%- include('partials/header'); %>
+<!-- End Header -->
+    <!-- Navigation -->
+    <!-- End Navigation -->
+    <%- include('partials/nav'); %>
+    <!-- Main Content -->
+    <%
+    for(const bot of bots){
+        %>
+        <div><a href="/bots/<%=bot.botName%>"><%=bot.botName%></a></div>
+        <%
+    }%>
+    <hr width="90vw"/>
+    <a href="/bots/new">New Bot</a>
+    <!-- End Main Content -->
+
+    <!-- Footer -->
+<%- include('partials/footer'); %>
+    <!-- End Footer -->
